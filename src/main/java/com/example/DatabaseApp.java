@@ -47,6 +47,7 @@ public class DatabaseApp {
         }
         LoremIpsum loremIpsum = new LoremIpsum();
 
+
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO notes (note_id, note_title, note_message, user_id) VALUES (?,?,?,?);");
 
         for (int i = 1; i <= 10 ; i++) {
