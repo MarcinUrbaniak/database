@@ -15,9 +15,19 @@ public class DatabaseApp {
         Connection connection = DriverManager.getConnection(JDBC_URL, DATABASE_USER, DATABASE_PASS);
         Statement statement = connection.createStatement();
 
-        //ResultSet resultSet = statement.executeQuery("SELECT * FROM notes;");
-        int resultCount = statement.executeUpdate("CREATE TABLE test (test_id integer, test_name_character text);");
-//
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM notes;");
+        //int resultCount = statement.executeUpdate("CREATE TABLE test (test_id integer, test_name_character text);");
+
+
+        while (resultSet.next()){
+            int noteId = resultSet.getInt(1);
+            String noteTitle = resultSet.getString("note_title");
+            String noteMsg = resultSet.getString(3);
+
+            System.out.println("noteTitle + noteId = " + noteTitle + noteId + " msg: " + noteMsg);
+
+        }
+
 
         statement.close();
         connection.close();
