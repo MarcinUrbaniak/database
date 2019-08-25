@@ -17,7 +17,7 @@ public class DatabaseApp {
 
         //ResultSet resultSet = statement.executeQuery("SELECT * FROM notes;");
         int resultCount = statement.executeUpdate("CREATE TABLE test (test_id integer, test_name_character text);");
-
+//
 
         statement.close();
         connection.close();
