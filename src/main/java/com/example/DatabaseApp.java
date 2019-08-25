@@ -15,8 +15,8 @@ public class DatabaseApp {
         Connection connection = DriverManager.getConnection(JDBC_URL, DATABASE_USER, DATABASE_PASS);
         Statement statement = connection.createStatement();
 
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM notes;");
-
+        //ResultSet resultSet = statement.executeQuery("SELECT * FROM notes;");
+        int resultCount = statement.executeUpdate("CREATE TABLE test (test_id integer, test_name_character text);");
 
 
         statement.close();
